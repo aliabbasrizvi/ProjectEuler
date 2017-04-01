@@ -42,22 +42,8 @@ number_to_alphabet_count = {
 def get_alphabet_count__upto_100(i):
         if i <= 20 or i % 10 == 0:
             return number_to_alphabet_count[i]
-        elif i < 30:
-            return number_to_alphabet_count[20] + number_to_alphabet_count[i - 20]
-        elif i < 40:
-            return number_to_alphabet_count[30] + number_to_alphabet_count[i - 30]
-        elif i < 50:
-            return number_to_alphabet_count[40] + number_to_alphabet_count[i - 40]
-        elif i < 60:
-            return number_to_alphabet_count[50] + number_to_alphabet_count[i - 50]
-        elif i < 70:
-            return number_to_alphabet_count[60] + number_to_alphabet_count[i - 60]
-        elif i < 80:
-            return number_to_alphabet_count[70] + number_to_alphabet_count[i - 70]
-        elif i < 90:
-            return number_to_alphabet_count[80] + number_to_alphabet_count[i - 80]
-        elif i < 100:
-            return number_to_alphabet_count[90] + number_to_alphabet_count[i - 90]
+        else:
+            return number_to_alphabet_count[(i / 10) * 10] + number_to_alphabet_count[i - (i / 10) * 10]
 
 def get_total_alphabet_count(range_end):
     result = 0
